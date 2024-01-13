@@ -46,6 +46,8 @@ To integrate Object-9 into your project, follow these steps:
 
      ```bash
      pip install -r requirements.txt
+     pip install characterai
+     pip install websockets
      ```
 
 3. **Step 3: Run Object-9**
