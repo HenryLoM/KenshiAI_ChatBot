@@ -1,3 +1,15 @@
+from characterai import PyCAI
+
+# variables from chatbot's library
+client = PyCAI('e8fef74a7ca89d9ae65d2606591fb94b0c323b9c')  # profile for work
+char = 'IlJEFcRpD74cqg8mNMpM5iTXFF5EtUI66yWbT9we2Wo'  # character for work
+chat = client.chat.get_chat(char)  # import chat into variable
+participants = chat['participants']
+if not participants[0]['is_human']:
+    tgt = participants[0]['user']['username']
+else:
+    tgt = participants[1]['user']['username']
+
 class ChatBot:
 
     def __init__(self):
@@ -15,7 +27,10 @@ Management:
 _ _ _ _ _ _ _ _ _ _ _ _''')
 
     def chat_bots_answer(self, prompt):
-        return 'ChatBot – *answer of chatbot*'  # here must be chatbot's functionality to answer
+        message = prompt  # get a message
+        data = client.chat.send_message(chat['external_id'], tgt, message)  # mix all our stuff
+        text = data['replies'][0]['text']  # get ready the text
+        return f"ChatBot: {text}"  # return an answer
 
     def new_topic(self, name, conv):
         self.topics.append(name)
