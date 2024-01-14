@@ -16,11 +16,13 @@ class ChatBot:
     def __init__(self):
         self.save_message = "File with all conversation was created on your desktop"
         self.start_message = f'''
-_ _ _ _ _ _ _ _ _ KenshiAI Demo _ _ _ _ _ _ _ _ _      
-Commands:
-/new – end the current chat and make a new one
-/save – save the current chat as a file
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _'''
+╔════════════════════════════════════════════════╗
+║                  KenshiAI Demo                 ║
+║Commands:                                       ║
+║/new – end the current chat and make a new one  ║
+║/save – save the current chat as a file         ║
+╚════════════════════════════════════════════════╝
+'''
 
     def get_chatbots_answer(self, prompt):
         message = prompt  # get a message
