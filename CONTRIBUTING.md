@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-Welcome to the Object-9 project! We're thrilled that you want to contribute. Before you get started, please take a moment to read through our contribution guidelines to ensure a smooth collaboration.
+Welcome to the KenshiAI project! We're thrilled that you want to contribute. Before you get started, please take a moment to read through our contribution guidelines to ensure a smooth collaboration.
 
 ## How to Contribute
 
@@ -11,7 +11,7 @@ Welcome to the Object-9 project! We're thrilled that you want to contribute. Bef
 
 # Coding Standards
 
-When contributing to Object-9, it's essential to follow certain coding standards to ensure consistency and maintainability. Adhering to these standards makes the codebase more readable and makes collaboration smoother.
+When contributing to KenshiAI, it's essential to follow certain coding standards to ensure consistency and maintainability. Adhering to these standards makes the codebase more readable and makes collaboration smoother.
 
 ## 1. Code Formatting
 
