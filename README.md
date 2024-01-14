@@ -1,6 +1,6 @@
-# Object-9
+# KenshiAI
 
-Object-9 is a project aimed at developing a functional chatbot for use in various projects and systems. I plan to integrate it into my own operating system. While it is currently in its early stages and may be considered somewhat inexperienced, with patience and your assistance, this project has the potential to evolve into something great.
+KenshiAI is a project aimed at developing a functional chatbot for use in various projects and systems. I plan to integrate it into my own operating system. While it is currently in its early stages and may be considered somewhat inexperienced, with patience and your assistance, this project has the potential to evolve into something great.
 
 ## License
 
@@ -16,30 +16,30 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Introduction
 
-Welcome to the Object-9 repository! Object-9 is designed to be a versatile chatbot suitable for integration into various projects and systems. Although it is currently in the early stages of development and may be considered somewhat inexperienced, with patience and your assistance, this project has the potential to evolve into something great.
+Welcome to the KenshiAI repository! KenshiAI is designed to be a versatile chatbot suitable for integration into various projects and systems. Although it is currently in the early stages of development and may be considered somewhat inexperienced, with patience and your assistance, this project has the potential to evolve into something great.
 
 ## Features
 
-- **Modularity:** Object-9 is designed with a modular architecture for easy integration into different projects.
-- **Customizability:** Users can customize and extend Object-9's functionality to suit their specific needs.
-- **Compatibility:** Object-9 is intended to be compatible with various systems and projects.
+- **Modularity:** KenshiAI is designed with a modular architecture for easy integration into different projects.
+- **Customizability:** Users can customize and extend KenshiAI's functionality to suit their specific needs.
+- **Compatibility:** KenshiAI is intended to be compatible with various systems and projects.
 
 ## How to Use
 
-To integrate Object-9 into your project, follow these steps:
+To integrate KenshiAI into your project, follow these steps:
 
 1. **Step 1: Clone the Repository**
-   - Download the Object-9 repository to your local device using the following command:
+   - Download the KenshiAI repository to your local device using the following command:
 
      ```bash
-     git clone https://github.com/your-username/Object-9.git
+     git clone https://github.com/your-username/KenshiAI.git
      ```
 
 2. **Step 2: Set Up Your Environment**
    - Navigate to the main directory:
 
      ```bash
-     cd Object-9
+     cd KenshiAI
      ```
 
    - Install any dependencies required for your environment:
@@ -50,7 +50,7 @@ To integrate Object-9 into your project, follow these steps:
      pip install websockets
      ```
 
-3. **Step 3: Run Object-9**
+3. **Step 3: Run KenshiAI**
    - Execute the code in your Python IDE:
 
      ```python
@@ -60,17 +60,17 @@ To integrate Object-9 into your project, follow these steps:
    - Customize the chatbot's behavior by modifying the configuration files and modules as needed.
 
 4. **Step 4: Integrate with Your Project**
-   - Integrate Object-9 into your project by importing the necessary modules and functions.
+   - Integrate KenshiAI into your project by importing the necessary modules and functions.
 
-   - Refer to the [Contribution Guidelines](CONTRIBUTING.md) for information on extending Object-9's functionality.
+   - Refer to the [Contribution Guidelines](CONTRIBUTING.md) for information on extending KenshiAI's functionality.
 
 Feel free to reach out to us if you encounter any issues or have questions during the integration process.
 
-**Note:** Ensure you have the required Python version and dependencies installed before running Object-9.
+**Note:** Ensure you have the required Python version and dependencies installed before running KenshiAI.
 
 ## Contribution Guidelines
 
-We welcome contributions from the community. To contribute to Object-9, follow these steps:
+We welcome contributions from the community. To contribute to KenshiAI, follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature: `git checkout -b feature-name`.
