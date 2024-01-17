@@ -14,14 +14,26 @@ else:
 class ChatBot:
 
     def __init__(self):
-        self.save_message = "File with all conversation was created on your desktop"
-        self.start_message = f'''
-╔════════════════════════════════════════════════╗
-║                  KenshiAI Demo                 ║
-║Commands:                                       ║
-║/new – end the current chat and make a new one  ║
-║/save – save the current chat as a file         ║
-╚════════════════════════════════════════════════╝
+        self.start_message = '''
+╔═════════════════════════════════════════════════╗
+║                  KenshiAI Demo                  ║
+║Commands:                                        ║
+║/new – end the current chat and make a new one   ║
+║/save – save the current chat as a file          ║
+║/info - give the information about this AI       ║
+╚═════════════════════════════════════════════════╝
+'''
+        self.save_message = '''
+╔══════════════════════════════════════════════════════╗
+║File with all conversation was created on your desktop║
+╚══════════════════════════════════════════════════════╝
+'''
+        self.info_message = '''
+╔═══════════════════════════════════════════════════════════════╗
+║Project was maden by Muhammad Gadisov                          ║
+║Project's Github: https://github.com/HenryLoM/KenshiAI_ChatBot ║
+║About AI: Kenshi was maden using unofficial "character ai" api.║
+╚═══════════════════════════════════════════════════════════════╝
 '''
 
     def get_chatbots_answer(self, prompt):

@@ -1,57 +1,79 @@
-from FunctionalPart import ChatBot
 import tkinter as tk
-import platform
+import sys
+import socket
+
+# check the internet connection
+try:
+    socket.create_connection(("www.google.com", 80))
+except:
+    sys.stderr.write("_ _ You have no the internet connection _ _")
+    sys.exit(1)
 
 # make the object ChatBot
+from FunctionalPart import ChatBot
+import VoicePart as Voice
 bot = ChatBot()
 
 # variables
-first_message = True
+isFirstMessage = True
+isTalk = False
 conversation = {}
 
-# functions
-def greetings():
-    global first_message
-    if first_message:
-        first_message = False
-        text_widget.config(state=tk.NORMAL)  # start chat
-        text_widget.tag_configure("center", justify='center')
-        text_widget.insert(tk.END, bot.start_message + "\n\n", "center")  # show chatbot's message
-        text_widget.config(state=tk.DISABLED)  # stop chat for saving it of editing
+# – – – – – – – – – – – – – – – – – – functions – – – – – – – – – – – – – – – – – –
+def call_command(command, clear=False):
+    text_widget.config(state=tk.NORMAL)  # start chat
+    if clear:
+        text_widget.delete(1.0, tk.END)  # clear the entire content of the text_widget
+    text_widget.tag_configure("center", justify='center')
+    text_widget.insert(tk.END, command + "\n\n", "center")  # show chatbot's message
+    text_widget.config(state=tk.DISABLED)  # stop chat for saving it of editing
+    entry.delete(0, tk.END)  # clear the input place
 
-def on_button_click(event=None):
-    global conversation
+def greetings():
+    global isFirstMessage
+    if isFirstMessage:
+        isFirstMessage = False
+        call_command(bot.start_message)  # call the start message
+
+def turn_voice_button():
+    global isTalk
+    isTalk = not isTalk
+    if isTalk:
+        Voice.warning()
+
+def send_message_button(event=None):
     prompt = entry.get()
 
-    # Command /new
+    # command /new
     if prompt == "/new":
         conversation.clear()
-        # update the widget of the window
-        text_widget.config(state=tk.NORMAL)  # start chat
-        text_widget.delete(1.0, tk.END)  # Clear the entire content of the text_widget
-        text_widget.insert(tk.END, bot.start_message + "\n\n")  # show chatbot's message
-        text_widget.config(state=tk.DISABLED)  # stop chat for saving it of editing
-        entry.delete(0, tk.END)  # clear the input place
+        call_command(bot.start_message, True)  # call the start message
 
-    # Command /end
+    # command /end
     elif prompt == "/save":
         bot.make_file(conversation)
-        # update the widget of the window
-        text_widget.config(state=tk.NORMAL)  # start chat
-        text_widget.insert(tk.END, bot.save_message + "\n\n")  # show chatbot's message
-        text_widget.config(state=tk.DISABLED)  # stop chat for saving it of editing
-        entry.delete(0, tk.END)  # clear the input place
+        call_command(bot.save_message)  # call the save message
 
-    # Simple message
+    # command /info
+    elif prompt == "/info":
+        # update the widget of the window
+        call_command(bot.info_message)  # call the info message
+
+    # simple message
     else:
         answer = bot.get_chatbots_answer(prompt)
         conversation[prompt] = answer
         # update the widget of the window
         text_widget.config(state=tk.NORMAL)  # start chat
         text_widget.insert(tk.END, f"User: {prompt}" + "\n\n")  # show user's message
-        text_widget.insert(tk.END, answer + "\n\n")  # show chatbot's message
+        text_widget.insert(tk.END, answer + "\n\n")  # show Kenshi's message
         text_widget.config(state=tk.DISABLED)  # stop chat for saving it of editing
         entry.delete(0, tk.END)  # clear the input place
+        # voice settings
+        if isTalk:
+            Voice.start_talk(answer)
+
+# – – – – – – – – – – – – – – – – – – window – – – – – – – – – – – – – – – – – –
 
 # make the window
 root = tk.Tk()
@@ -63,19 +85,25 @@ text_widget = tk.Text(root, wrap="word")
 text_widget.pack(expand=True, fill="both")
 text_widget.config(state=tk.DISABLED)
 text_widget.configure(bg="#242424", fg="#ffffff", highlightbackground="#242424")  # change colors
-greetings()
 
 # input place
 entry = tk.Entry(root)
 entry.pack(side="bottom", fill="x", padx=(0, 50), pady=1)
-entry.bind("<Return>", on_button_click)  # "Enter / Return" can be used for sending messages
+entry.bind("<Return>", send_message_button)  # "Enter / Return" can be used for sending messages
 entry.configure(bg="#242424", fg="#ffffff")  # change colors
 
-# button
-button = tk.Button(root, text=">", width=2, height=1, pady=2, command=on_button_click)
-button.place(relx=1, rely=1, anchor="se")
-if platform.system() != "Darwin":  # MacOS have a bug that does not let change button's color
-    button.configure(bg="#242424", fg="#ffffff")  # change colors
+# button to send
+button_s = tk.Button(root, text=">", width=2, height=1, pady=2, command=send_message_button)
+button_s.place(relx=1, rely=1, anchor="se")
+if not sys.platform.startswith("darwin"):  # MacOS have a bug that does not let change button's color
+    button_s.configure(bg="#242424", fg="#ffffff")  # change colors
+
+# button to talk
+button_t = tk.Button(root, text="Voice", width=2, height=1, pady=2, command=turn_voice_button)
+button_t.place(relx=1, rely=0.92, anchor="se")
+if not sys.platform.startswith("darwin"):  # MacOS have a bug that does not let change button's color
+    button_t.configure(bg="#242424")  # change colors
 
 # create the window
+greetings()  # the first thing in the chat is greetings
 root.mainloop()
