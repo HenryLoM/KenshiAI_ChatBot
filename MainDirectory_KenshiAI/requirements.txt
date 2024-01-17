@@ -1,0 +1,4 @@
+pip install characterai
+pip install websockets
+pip install pyttsx3
+pip install py3-tts
