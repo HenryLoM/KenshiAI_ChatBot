@@ -8,9 +8,9 @@ engine.setProperty('rate', 190)  # speed of speaking
 engine.setProperty('voice', 'com.apple.eloquence.en-US.Fred')  # give a male voice
 
 # start to speak
-def start_talk(*words):
-    text = str(words)
-    engine.say(text)
+def start_talk(*data):
+    text = str(data)
+    engine.say(text[8:])
     engine.runAndWait()
 
 # if voice eas turned on

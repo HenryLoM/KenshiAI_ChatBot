@@ -20,6 +20,7 @@ isTalk = False
 conversation = {}
 
 # – – – – – – – – – – – – – – – – – – functions – – – – – – – – – – – – – – – – – –
+
 def call_command(command, clear=False):
     text_widget.config(state=tk.NORMAL)  # start chat
     if clear:

@@ -1,4 +1,5 @@
 from characterai import PyCAI
+import os
 
 # variables from chatbot's library
 client = PyCAI("e8fef74a7ca89d9ae65d2606591fb94b0c323b9c")  # profile for work
@@ -43,6 +44,8 @@ class ChatBot:
         return f"Kenshi: {text}"  # return an answer
 
     def make_file(self, conversation):
-        with open("chatbot's_data", "w") as file:  # make the file
+        desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")  # make a variable of the desktop
+        file_path = os.path.join(desktop_path, "chatbot_data.txt")  # make a way to the desktop
+        with open(file_path, "w") as file:  # make the file
             for key, value in conversation.items():  # convert a conversation
                 file.write(f"User: {key}\n{value}\n")  # fill the file
