@@ -21,6 +21,8 @@
 - Updated README.md with usage instructions
 - Updated requirements.txt
 
+## [Released]
+
 ## [1.0.0] - 2024-01-18
-- Realise
+- Released
 - Fixed bugs
