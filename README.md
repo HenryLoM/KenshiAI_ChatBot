@@ -2,10 +2,6 @@
 
 KenshiAI is a project aimed at developing a functional chatbot for use in various projects and systems. I plan to integrate it into my own operating system. While it is currently in its early stages and may be considered somewhat inexperienced, with patience and your assistance, this project has the potential to evolve into something great.
 
-## License
-
-This project is licensed under the [GNU General Public License v3.0](LICENSE).
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -39,7 +35,7 @@ To integrate KenshiAI into your project, follow these steps:
    - Navigate to the main directory:
 
      ```bash
-     cd KenshiAI
+     cd MainDirectory_KenshiAI
      ```
 
    - Install any dependencies required for your environment:
