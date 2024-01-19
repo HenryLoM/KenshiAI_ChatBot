@@ -55,6 +55,7 @@ To integrate KenshiAI into your project, follow these steps:
      pip install websockets
      pip install pyttsx3
      pip install py3-tts
+     pip install typing_extensions
      ```
 
 3. **Step 3: Run KenshiAI**
