@@ -2,8 +2,8 @@ from characterai import PyCAI
 import os
 
 # variables from chatbot's library
-client = PyCAI("e8fef74a7ca89d9ae65d2606591fb94b0c323b9c")  # profile for work
-char = "IlJEFcRpD74cqg8mNMpM5iTXFF5EtUI66yWbT9we2Wo"  # character for work
+client = PyCAI("05036a2132aca13a0ce4a2ec486b56a9e9ec0a52")  # profile for work
+char = "5KaYRcdwaEOOwBUre6c9IolYgoggr3xRHrx5Bt5yUR0"  # character for work
 chat = client.chat.get_chat(char)  # import a chat into the variable
 participants = chat["participants"]
 if not participants[0]["is_human"]:
