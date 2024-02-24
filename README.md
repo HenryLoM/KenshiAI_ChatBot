@@ -28,7 +28,7 @@ To integrate KenshiAI into your project, follow these steps:
    - Download the KenshiAI repository to your local device using the following command:
 
      ```bash
-     git clone https://github.com/HenryLoM/KenshiAI.git
+     git clone https://github.com/HenryLoM/KenshiAI_ChatBot.git
      ```
 
 2. **Step 2: Set Up Your Environment**
