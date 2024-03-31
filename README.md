@@ -47,11 +47,11 @@ To integrate KenshiAI into your project, follow these steps:
      Or you can do that on your own:
      
      ```bash
-     pip install characterai
+     pip install PyCharacterAI
      pip install websockets
+     pip install typing_extensions
      pip install pyttsx3
      pip install py3-tts
-     pip install typing_extensions
      ```
 
 3. **Step 3: Run KenshiAI**
