@@ -1,5 +1,5 @@
-characterai
+PyCharacterAI
 websockets
+typing_extensions
 pyttsx3
 py3-tts
-typing_extensions
