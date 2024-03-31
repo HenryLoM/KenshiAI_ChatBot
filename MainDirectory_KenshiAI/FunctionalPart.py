@@ -1,15 +1,11 @@
-from characterai import PyCAI
+from PyCharacterAI import Client
+import asyncio
 import os
 
 # variables from chatbot's library
-client = PyCAI("05036a2132aca13a0ce4a2ec486b56a9e9ec0a52")  # profile for work
-char = "5KaYRcdwaEOOwBUre6c9IolYgoggr3xRHrx5Bt5yUR0"  # character for work
-chat = client.chat.get_chat(char)  # import a chat into the variable
-participants = chat["participants"]
-if not participants[0]["is_human"]:
-    tgt = participants[0]["user"]["username"]
-else:
-    tgt = participants[1]["user"]["username"]
+profile = "05036a2132aca13a0ce4a2ec486b56a9e9ec0a52"  # profile for work
+character = "5KaYRcdwaEOOwBUre6c9IolYgoggr3xRHrx5Bt5yUR0"  # character for work
+client = Client()
 
 # class of our ChatBot
 class ChatBot:
@@ -37,11 +33,15 @@ class ChatBot:
 ╚═══════════════════════════════════════════════════════════════╝
 '''
 
-    def get_chatbots_answer(self, prompt):
+    async def async_get_chatbots_answer(self, prompt):
         message = prompt  # get a message
-        data = client.chat.send_message(chat["external_id"], tgt, message)  # mix all our stuff
-        text = data["replies"][0]["text"]  # get ready the text
-        return f"Kenshi: {text}"  # return an answer
+        await client.authenticate_with_token(profile)  # connect to the profile
+        chat = await client.create_or_continue_chat(character)  # enter a chat
+        text = await chat.send_message(message)  # get an answer
+        return f"Kenshi: {text.text}"  # return an answer
+
+    def get_chatbots_answer(self, prompt):
+        return asyncio.run(self.async_get_chatbots_answer(prompt))
 
     def make_file(self, conversation):
         desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")  # make a variable of the desktop
