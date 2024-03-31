@@ -49,3 +49,10 @@ class ChatBot:
         with open(file_path, "w") as file:  # make the file
             for key, value in conversation.items():  # convert a conversation
                 file.write(f"User: {key}\n{value}\n")  # fill the file
+
+    async def async_new_chat(self):
+        await client.authenticate_with_token(profile)  # connect to the profile
+        await client.create_chat(character)  # make a chat
+
+    def new_chat(self):
+        return asyncio.run(self.async_new_chat())

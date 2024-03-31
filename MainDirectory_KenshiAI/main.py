@@ -1,3 +1,5 @@
+# – – – – – – – – – – – – – – – – – – primary stuff – – – – – – – – – – – – – – – – – –
+
 import tkinter as tk
 import sys
 import socket
@@ -35,6 +37,7 @@ def greetings():
     if isFirstMessage:
         isFirstMessage = False
         call_command(bot.start_message)  # call the start message
+        bot.new_chat()  # preparing the chatbot
 
 def turn_voice_button():
     global isTalk
@@ -54,6 +57,7 @@ def send_message_button(event=None):
     elif prompt == "/save":
         bot.make_file(conversation)
         call_command(bot.save_message)  # call the save message
+        bot.new_chat()  # making a new chat
 
     # command /info
     elif prompt == "/info":
@@ -91,7 +95,7 @@ text_widget.configure(bg="#242424", fg="#ffffff", highlightbackground="#242424")
 entry = tk.Entry(root)
 entry.pack(side="bottom", fill="x", padx=(0, 50), pady=1)
 entry.bind("<Return>", send_message_button)  # "Enter / Return" can be used for sending messages
-entry.configure(bg="#242424", fg="#ffffff")  # change colors
+entry.configure(bg="#242424", fg="#ffffff", insertbackground="#ffffff")  # change colors
 
 # button to send
 button_s = tk.Button(root, text=">", width=2, height=1, pady=2, command=send_message_button)
