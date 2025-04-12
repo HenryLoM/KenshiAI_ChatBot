@@ -1,5 +1,3 @@
-PyCharacterAI
-websockets
-typing_extensions
+aiofiles
 pyttsx3
-py3-tts
+ollama

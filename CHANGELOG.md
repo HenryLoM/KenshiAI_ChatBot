@@ -26,3 +26,10 @@
 ## [1.0.0] - 2024-01-18
 - Released
 - Fixed bugs
+
+## [1.1.0] - 2025-04-12
+- Remake of the project
+- Now it is a local AI program
+- Flexability was hightly increased
+- Responses are faster
+- File structure was fixed

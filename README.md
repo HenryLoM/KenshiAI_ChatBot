@@ -1,78 +1,78 @@
-# KenshiAI
+# KenshiAI 🗡️
 
 KenshiAI is a project aimed at developing a functional chatbot for use in various projects and systems. I plan to integrate it into my own operating system. While it is currently in its early stages and may be considered somewhat inexperienced, with patience and your assistance, this project has the potential to evolve into something great.
 
-## Table of Contents
+## Table of Contents 📋
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Folder Structure](#folder-structure)
 - [How to Use](#how-to-use)
+- [Integration](#integration)
 - [Contribution Guidelines](#contribution-guidelines)
 - [License](#license)
 
-## Introduction
+## Introduction 🎩
 
-Welcome to the KenshiAI repository! KenshiAI is designed to be a versatile chatbot suitable for integration into various projects and systems. Although it is currently in the early stages of development and may be considered somewhat inexperienced, with patience and your assistance, this project has the potential to evolve into something great.
+Welcome to the KenshiAI repository! KenshiAI is designed to be a versatile chatbot suitable for integration into a wide range of systems. Though still in its early development, it has the potential to grow into a powerful assistant with your feedback and contributions.
 
-## Features
+## Features ✨
 
-- **Modularity:** KenshiAI is designed with a modular architecture for easy integration into different projects.
-- **Customizability:** Users can customize and extend KenshiAI's functionality to suit their specific needs.
-- **Compatibility:** KenshiAI is intended to be compatible with various systems and projects.
+- **Modularity** – Easy to plug into various systems thanks to its modular architecture.
+- **Customizability** – Fully customizable to match your project's requirements.
+- **Compatibility** – Designed with cross-system compatibility in mind.
 
-## How to Use
+## Folder Structure 📁
+```plaintext
+MainDirectory_KenshiAI/
+│
+├── main.py                             # GUI logic and layout and entry point
+├── FunctionalPart.py                   # Chatbot logic and conversation management
+├── VoicePart.py                        # Voice functions
+├── logPart.py                          # Logging system for debugging
+├── messages.py                         # Variables with framed messages
+├── requirements.py                     # Dependencies
+│
+├── Assets/                             # Folder containing AI avatars and assets
+│   ├── KenshiAI_icon.png
+│   ├── chat_memory.json
+│   ├── instructions.txt
+│   ├── recollection.txt
+```
 
-To integrate KenshiAI into your project, follow these steps:
+## How to Use 🛠️
 
-1. **Step 1: Clone the Repository**
-   - Download the KenshiAI repository to your local device using the following command:
+1. Download [Ollama](https://ollama.com/download)
+2. Run it in apart console window:
+   ```bash
+   ollama serve
+   ```
+3. Pull the LLM (you can do any, if you find it workable):
+   ```bash
+   ollama pull hf.co/IndexTeam/Index-1.9B-Character-GGUF:latest
+   ```
+4. Clone the repository or download the project files.
+5. Navigate to the project directory:
+   ```bash
+   cd MainDirectory_KenshiAI
+   ```
+6. Install all dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+7. Run the application:
+   ```bash
+   python main.py
+   ```
 
-     ```bash
-     git clone https://github.com/HenryLoM/KenshiAI_ChatBot.git
-     ```
-
-2. **Step 2: Set Up Your Environment**
-   - Navigate to the main directory:
-
-     ```bash
-     cd MainDirectory_KenshiAI
-     ```
-
-   - Install any dependencies required for your environment:
-
-     ```bash
-     pip install -r requirements.txt
-     ```
-     
-     Or you can do that on your own:
-     
-     ```bash
-     pip install PyCharacterAI
-     pip install websockets
-     pip install typing_extensions
-     pip install pyttsx3
-     pip install py3-tts
-     ```
-
-3. **Step 3: Run KenshiAI**
-   - Execute the code in your Python IDE:
-
-     ```python
-     python main.py
-     ```
-
-   - Customize the chatbot's behavior by modifying the configuration files and modules as needed.
-
-4. **Step 4: Integrate with Your Project**
+## Integrate with Your Project ⚙️
    - Integrate KenshiAI into your project by importing the necessary modules and functions.
 
    - Refer to the [Contribution Guidelines](CONTRIBUTING.md) for information on extending KenshiAI's functionality.
 
 Feel free to reach out to us if you encounter any issues or have questions during the integration process.
 
-**Note:** Ensure you have the required Python version and dependencies installed before running KenshiAI.
-
-## Contribution Guidelines
+## Contribution Guidelines ❤️‍🩹
 
 We welcome contributions from the community. To contribute to KenshiAI, follow these steps:
 
@@ -84,6 +84,6 @@ We welcome contributions from the community. To contribute to KenshiAI, follow t
 
 Make sure to follow our [Code of Conduct](CODE_OF_CONDUCT.md) and [Contribution Guidelines](CONTRIBUTING.md).
 
-## License
+## License 📜
 
 This project is licensed under the terms of the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.

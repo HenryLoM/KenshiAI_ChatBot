@@ -1,20 +1,19 @@
 import pyttsx3
 
-# make the object of tts
+# Make the object of tts and give it a certain voice
 engine = pyttsx3.init()
+engine.setProperty(name='voice', value='com.apple.speech.synthesis.voice.Fred')  # Give a male voice
 
-# set a criterion of the speed
-engine.setProperty('rate', 190)  # speed of speaking
-engine.setProperty('voice', 'com.apple.eloquence.en-US.Fred')  # give a male voice
 
-# start to speak
 def start_talk(*data):
+    """Makes the text to be spoken."""
     text = str(data)
     engine.say(text[8:])
     engine.runAndWait()
 
-# if voice eas turned on
+
 def warning():
+    """Says out loud if voice part was turned on."""
     text = "Voice was turned on"
     engine.say(text)
     engine.runAndWait()
