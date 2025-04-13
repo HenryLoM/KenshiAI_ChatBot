@@ -33,3 +33,8 @@
 - Flexability was hightly increased
 - Responses are faster
 - File structure was fixed
+
+## [1.1.1] - 2025-04-13
+- Added the missing functions
+- New commands
+- Recollection and instructions now are working correctly

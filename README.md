@@ -4,13 +4,13 @@ KenshiAI is a project aimed at developing a functional chatbot for use in variou
 
 ## Table of Contents 📋
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Folder Structure](#folder-structure)
-- [How to Use](#how-to-use)
-- [Integration](#integration)
-- [Contribution Guidelines](#contribution-guidelines)
-- [License](#license)
+- [Introduction](#introduction-)
+- [Features](#features-)
+- [Folder Structure](#folder-structure-)
+- [How to Use](#how-to-use-️)
+- [Integration](#integrate-with-your-project-️)
+- [Contribution Guidelines](#contribution-guidelines-️)
+- [License](#license-)
 
 ## Introduction 🎩
 
@@ -19,7 +19,7 @@ Welcome to the KenshiAI repository! KenshiAI is designed to be a versatile chatb
 ## Features ✨
 
 - **Modularity** – Easy to plug into various systems thanks to its modular architecture.
-- **Customizability** – Fully customizable to match your project's requirements.
+- **Customizability** – Fully customizable to match your project's requirements (LLM model, AI instructions, AI recollection).
 - **Compatibility** – Designed with cross-system compatibility in mind.
 
 ## Folder Structure 📁

@@ -109,7 +109,7 @@ class ChatBot:
         except Exception as e:
             logPart.show_up_log(message=f"{str(e)}", level=3)  # Logging
 
-    async def refresh_delete_last_response(self, refresh: bool) -> str:
+    async def delete_last_response(self, refresh: bool = False) -> str:
         """Deletes the last AI response and/or regenerates a new one."""
         try:
             # Ensure there are at least two messages (last AI response and corresponding user input)
@@ -131,5 +131,5 @@ class ChatBot:
                 return ""
 
         except Exception as e:
-            logPart.show_up_log(message=f"{str(e)}", level=3)
+            logPart.show_up_log(message=f"{str(e)}", level=3)  # Logging
             return messages.error_refreshing_response
